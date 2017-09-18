@@ -1,0 +1,18 @@
+{
+  "name": "brain-games",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Michael <h2kb> Birch",
+  "license": "ISC",
+  "devDependencies":{
+    "babel-cli": "*",
+    "babel-core": "*",
+    "babel-present-env": "*",
+    "babel-present-stage-0": "*"
+  }
+}
+
