@@ -5,6 +5,9 @@ start:
 	npm run babel-node -- src/bin/brain-games.js
 
 publish:
-	npm publish -t $(T) -u $(U)
+	npm publish -u $(U)
+
+lint:
+	npm run eslint
 
 .PHONY:
