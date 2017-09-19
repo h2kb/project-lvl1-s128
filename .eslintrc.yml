@@ -23,4 +23,5 @@ rules:
     - always
 
   no-console: 0
+  no-tabs: 0
   
