@@ -2,7 +2,7 @@
   "name": "h2kb-brain-games",
   "version": "0.0.1",
   "description": "The game",
-  "main": "index.js",
+  "main": "dist/index.js",
   "bin": {
     "brain-games": "dist/bin/brain-games.js"
   },
@@ -17,6 +17,9 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/h2kb/project-lvl1-s128.git"
+  },
+  "dependencies": {
+    "readline-sync": "*"
   },
   "devDependencies": {
     "babel-cli": "*",
