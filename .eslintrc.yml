@@ -4,8 +4,7 @@ env:
   node: true
 
 extends:
-  - 'airbnb-base',
-  - 'eslint:recomended'
+  - 'airbnb-base'
 
 parser: babel-eslint
 
