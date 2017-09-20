@@ -8,6 +8,6 @@ publish:
 	npm publish -u $(U)
 
 lint:
-	npm run eslint src/
+	npm run eslint src
 
 .PHONY:
