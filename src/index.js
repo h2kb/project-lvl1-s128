@@ -21,13 +21,14 @@ const gameEven = () => {
       console.log(`Question: ${number}`);
       const correctAnswer = (number % 2 === 0) ? 'yes' : 'no';
       const userAnswer = readLineSync.question('Your answer: ');
-      if (correctAnswer !== userAnswer) {
-        console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.\nLet's try again, ${name}!\n`);
-      } else {
+      if (correctAnswer === userAnswer) {
         console.log('Correct!');
         return flow(n - 1);
       }
+      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.\nLet's try again, ${name}!\n`);
     }
+
+    return false;
   };
 
   return flow(3);
