@@ -5,7 +5,8 @@
   "main": "",
   "bin": {
     "brain-games": "dist/bin/brain-games.js",
-    "brain-even": "dist/bin/brain-even.js"
+    "brain-even": "dist/bin/brain-even.js",
+    "brain-calc": "dist/bin/brain-calc.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -21,7 +22,8 @@
     "url": "git+https://github.com/h2kb/project-lvl1-s128.git"
   },
   "dependencies": {
-    "readline-sync": "*"
+    "readline-sync": "*",
+    "hexlet-pairs": "*"
   },
   "devDependencies": {
     "babel-cli": "*",

@@ -1,37 +1,32 @@
 #!/usr/bin/env node
+import { car, cdr } from 'hexlet-pairs';
 import readLineSync from 'readline-sync';
 
-const randNum = (min, max) => {
-  const num = (Math.random() * (max - min)) + min;
 
-  return Math.floor(num);
-};
-
-const gameEven = () => {
+export default (rules, gameData) => {
+  const numOfQuestions = 3;
   console.log('\nWelcome to the Brain Games!');
-  console.log('Answer "yes" if number even otherwise answer "no".\n');
-  const name = readLineSync.question('May I have your name? ');
-  console.log(`Hello, ${name}!\n`);
+  console.log(rules);
+  const userName = readLineSync.question('May I have your name? ');
+  console.log(`Hello, ${userName}!\n`);
 
-  const flow = (n) => {
-    if (n === 0) {
-      console.log(`\nCongratulations, ${name}!`);
+  const iter = (n) => {
+    if (n === numOfQuestions) {
+      console.log(`\nCongratulations, ${userName}!`);
     } else {
-      const number = randNum(0, 100);
-      console.log(`Question: ${number}`);
-      const correctAnswer = (number % 2 === 0) ? 'yes' : 'no';
+      const userData = gameData();
+      const question = car(userData);
+      console.log(`Question: ${question}`);
+      const correctAnswer = cdr(userData);
       const userAnswer = readLineSync.question('Your answer: ');
       if (correctAnswer === userAnswer) {
         console.log('Correct!');
-        return flow(n - 1);
+        return iter(n + 1);
       }
-      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.\nLet's try again, ${name}!\n`);
+      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.\nLet's try again, ${userName}!\n`);
     }
-
     return false;
   };
 
-  return flow(3);
+  return iter(0);
 };
-
-export default gameEven;
