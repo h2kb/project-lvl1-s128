@@ -1,8 +1,8 @@
 import { cons } from 'hexlet-pairs';
 import startGame from '..';
-import getRandNum from '../shared/getRandNum';
+import getRandNum from '../utils';
 
-const rules = 'Answer "yes" if number even otherwise answer "no".\n';
+const description = 'Answer "yes" if number even otherwise answer "no".\n';
 
 const gameData = () => {
   const question = getRandNum(0, 100);
@@ -11,4 +11,4 @@ const gameData = () => {
   return cons(question, correctAnswer);
 };
 
-export default () => startGame(rules, gameData);
+export default () => startGame(description, gameData);
