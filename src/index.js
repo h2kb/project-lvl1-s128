@@ -9,10 +9,10 @@ const gameFlow = (gameData) => {
     if (countOfQuestions === numOfQuestions) {
       return true;
     }
-    const userData = gameData();
-    const question = car(userData);
+    const preProcessedData = gameData();
+    const question = car(preProcessedData);
     console.log(`Question: ${question}`);
-    const correctAnswer = cdr(userData);
+    const correctAnswer = cdr(preProcessedData);
     const userAnswer = readLineSync.question('Your answer: ');
     if (correctAnswer === userAnswer) {
       console.log('Correct!');
