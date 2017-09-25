@@ -20,7 +20,7 @@ const balanceNum = (num) => {
 
   const iter = (sum, count, acc) => {
     if (count === 0) {
-      return acc;
+      return String(acc).split('').sort().join('');
     }
     const nextIterNum = Math.floor(sum / count);
     const result = acc + String(nextIterNum);
