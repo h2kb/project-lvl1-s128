@@ -5,28 +5,36 @@ import getRandNum from '../utils';
 const description = 'What number is missing in this progression?';
 const lengthOfProgression = 10;
 
-const getProgression = (s, st, l) => {
-  let progression = [];
+const getProgression = (startOfProgression, stepOfProgression) => {
+  const progression = [];
 
   const iter = (start, step, length) => {
     if (length === lengthOfProgression) {
       return progression;
     }
-    progression = progression.push(start);
+    progression.push(start);
 
-    return iter(s + st, st, l + 1);
+    return iter(start + step, step, length + 1);
   };
 
-  return progression;
+  return iter(startOfProgression, stepOfProgression, 0);
+};
+
+const hideElement = (progression) => {
+  const newProgression = progression;
+  const idOfHidden = getRandNum(0, 10);
+  const hidden = String(progression[idOfHidden]);
+  newProgression[idOfHidden] = '..';
+
+  return cons(newProgression.join(' '), hidden);
 };
 
 const gameData = () => {
   const startOfProgression = getRandNum(10, 20);
   const stepOfProgression = getRandNum(1, 5);
-  const progression = getProgression(startOfProgression, stepOfProgression, 0);
-  const correctAnswer = '55';
+  const progression = hideElement(getProgression(startOfProgression, stepOfProgression));
 
-  return cons(progression.join(' '), correctAnswer);
+  return progression;
 };
 
 export default () => startGame(description, gameData);
