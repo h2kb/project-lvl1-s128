@@ -1,8 +1,8 @@
-import { cons } from 'hexlet-pairs';
+import { cons } from 'hexlet-pairs'; // eslint-disable-line
 import startGame from '..';
 import getRandNum from '../utils';
 
-const description = 'Find the greatest common divisor of given numbers\n';
+const description = 'Find the greatest common divisor of given numbers.';
 
 const gcd = (num1, num2) => {
   if (num2 === 0) {

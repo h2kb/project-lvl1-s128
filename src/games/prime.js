@@ -1,4 +1,4 @@
-import { cons } from 'hexlet-pairs';
+import { cons } from 'hexlet-pairs'; // eslint-disable-line
 import startGame from '..';
 import getRandNum from '../utils';
 

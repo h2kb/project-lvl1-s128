@@ -1,8 +1,8 @@
-import { cons } from 'hexlet-pairs';
+import { cons } from 'hexlet-pairs'; // eslint-disable-line
 import startGame from '..';
 import getRandNum from '../utils';
 
-const description = 'What is the result of the expression?\n';
+const description = 'What is the result of the expression?';
 
 const getPairQuestionAnswer = (numOfOperation, operand1, operand2) => {
   if (numOfOperation === 1) {

@@ -1,8 +1,8 @@
-import { cons } from 'hexlet-pairs';
+import { cons } from 'hexlet-pairs'; // eslint-disable-line
 import startGame from '..';
 import getRandNum from '../utils';
 
-const description = 'Answer "yes" if number even otherwise answer "no".\n';
+const description = 'Answer "yes" if number even otherwise answer "no".';
 
 const gameData = () => {
   const question = getRandNum(0, 100);
