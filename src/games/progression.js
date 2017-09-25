@@ -6,18 +6,15 @@ const description = 'What number is missing in this progression?';
 const lengthOfProgression = 10;
 
 const getProgression = (startOfProgression, stepOfProgression) => {
-  const progression = [];
-
-  const iter = (start, step, length) => {
+  const iter = (start, step, length, progression) => {
     if (length === lengthOfProgression) {
       return progression;
     }
-    progression.push(start);
 
-    return iter(start + step, step, length + 1);
+    return iter(start + step, step, length + 1, [...progression, start]);
   };
 
-  return iter(startOfProgression, stepOfProgression, 0);
+  return iter(startOfProgression, stepOfProgression, 0, []);
 };
 
 const hideElement = (progression) => {
